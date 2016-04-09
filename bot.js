@@ -2,6 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
+var clash_caller_ID = 0;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
@@ -10,6 +11,7 @@ function respond() {
       botRegexRules = /^\/rules/;
       botDuck = /^\/duck/;
       botRegexSh = /^\/shrug/; 
+      botRegexSCC = /^\/setclashcaller/;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -35,11 +37,19 @@ function respond() {
     postMessage("http://media3.giphy.com/media/YCseTHF2I6CCA/giphy.gif");
     this.res.end();
   }
+  else if(request.text && botRegexSCC.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("Set Clash Caller ID to: ");
+    clash_caller_ID = request.text.substring(6,request.text.length);
+    //var rep = req.replace(/ /,"+");
+    this.res.end();
+  } 
   else {
     console.log("don't care");
     this.res.writeHead(200);
     this.res.end();
   }
+  
 }
 
 function postMessage(response) {
