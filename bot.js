@@ -7,7 +7,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;
       botRegexSalt = /^\/salt/;
-      botRegexRules = /^\/rules/
+      botRegexRules = /^\/rules/;
       botRegexAd=/^\/advance/;
       botRegexGTA = /^\/gta/; 
       botRegexSC = /^\/SDL/i; 
