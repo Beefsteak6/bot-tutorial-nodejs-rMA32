@@ -47,7 +47,7 @@ function respond() {
   } 
   else if(request.text && botRegexGCC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Clash Caller is: " + clash_caller_ID);
+    postMessage("http://www.clashcaller.com/war/" + clash_caller_ID);
     //var rep = req.replace(/ /,"+");
     this.res.end();
   } 
