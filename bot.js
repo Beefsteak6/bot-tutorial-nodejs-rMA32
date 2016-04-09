@@ -41,7 +41,7 @@ function respond() {
   else if(request.text && botRegexSCC.test(request.text)) {
     this.res.writeHead(200);
     postMessage("Set Clash Caller ID to: ");
-    clash_caller_ID = request.text.substring(6,request.text.length);
+    clash_caller_ID = request.text.substring(14,request.text.length);
     //var rep = req.replace(/ /,"+");
     this.res.end();
   } 
