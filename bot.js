@@ -13,6 +13,7 @@ function respond() {
       botRegexSh = /^\/shrug/; 
       botRegexSCC = /^\/setclashcaller/;
       botRegexGCC = /^\/getclashcaller/;
+      botRegexGotoCC = = /^\/gotoclashcaller/;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -48,6 +49,12 @@ function respond() {
   else if(request.text && botRegexGCC.test(request.text)) {
     this.res.writeHead(200);
     postMessage("Clash Caller is: " + clash_caller_ID);
+    //var rep = req.replace(/ /,"+");
+    this.res.end();
+  } 
+  else if(request.text && botRegexGotoCC.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://clashcaller.com/war/" + clash_caller_ID);
     //var rep = req.replace(/ /,"+");
     this.res.end();
   } 
