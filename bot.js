@@ -35,7 +35,9 @@ function respond() {
   } 
   else if(request.text && botDuck.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://media3.giphy.com/media/YCseTHF2I6CCA/giphy.gif");
+    //postMessage("http://media3.giphy.com/media/YCseTHF2I6CCA/giphy.gif");
+    var Omega = '\u1F37A';
+    postMessage(Omega);
     this.res.end();
   }
   else if(request.text && botRegexSCC.test(request.text)) {
