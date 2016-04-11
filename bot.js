@@ -15,6 +15,7 @@ function respond() {
       botRegexSh = /^\/shrug/; 
       botRegexSCC = /^\/setclashcaller/;
       botRegexGCC = /^\/getclashcaller/;
+      botRegexBlameCheffie = /^\/blamecheffie/;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -44,13 +45,16 @@ function respond() {
     this.res.writeHead(200);
     clash_caller_ID = request.text.substring(16,request.text.length);
     postMessage("Clash Caller set to: " + clash_caller_ID);
-    //var rep = req.replace(/ /,"+");
     this.res.end();
   } 
   else if(request.text && botRegexGCC.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.clashcaller.com/war/" + clash_caller_ID);
-    //var rep = req.replace(/ /,"+");
+    this.res.end();
+  } 
+  else if(request.text && botRegexBlameCheffie.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://imgur.com/Ed33VLo");
     this.res.end();
   } 
   else {
