@@ -36,8 +36,8 @@ function respond() {
   else if(request.text && botBeer.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://media3.giphy.com/media/YCseTHF2I6CCA/giphy.gif");
-    var Omega = '\uD83CDF7A';
-    postMessage(Omega);
+    var Beer = String.fromCharCode(0xD83C,0xDF7A);
+    postMessage(Beer);
     this.res.end();
   }
   else if(request.text && botRegexSCC.test(request.text)) {
