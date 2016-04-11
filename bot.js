@@ -36,7 +36,7 @@ function respond() {
   else if(request.text && botDuck.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://media3.giphy.com/media/YCseTHF2I6CCA/giphy.gif");
-    var Omega = '\u1F37A';
+    var Omega = '\u1F600';
     postMessage(Omega);
     this.res.end();
   }
