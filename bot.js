@@ -4,7 +4,7 @@ var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 var clash_caller_ID = 0;
 var Beer = String.fromCharCode(0xD83C,0xDF7A);
-var Beers = String.fromCharCode(0xD83C,0xDF7A);
+var Beers = String.fromCharCode(0xD83C,0xDF7B);
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
