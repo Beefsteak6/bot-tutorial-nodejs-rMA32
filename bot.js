@@ -3,13 +3,15 @@ var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
 var clash_caller_ID = 0;
+var Beer = String.fromCharCode(0xD83C,0xDF7A);
+var Beers = String.fromCharCode(0xD83C,0xDF7A);
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;
       botRegexSalt = /^\/salt/;
       botRegexRules = /^\/rules/;
-      botBeer = /^\/beer/;
+      botBeer = /^\/getsixpack/;
       botRegexSh = /^\/shrug/; 
       botRegexSCC = /^\/setclashcaller/;
       botRegexGCC = /^\/getclashcaller/;
@@ -35,9 +37,7 @@ function respond() {
   } 
   else if(request.text && botBeer.test(request.text)) {
     this.res.writeHead(200);
-    //postMessage("http://media3.giphy.com/media/YCseTHF2I6CCA/giphy.gif");
-    var Beer = String.fromCharCode(0xD83C,0xDF7A);
-    postMessage(Beer);
+    postMessage(Beers+Beers+Beers+Beers+Beers+Beers);
     this.res.end();
   }
   else if(request.text && botRegexSCC.test(request.text)) {
