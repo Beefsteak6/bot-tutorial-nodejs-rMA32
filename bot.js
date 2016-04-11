@@ -9,7 +9,7 @@ function respond() {
       botRegex = /^\/cool guy/;
       botRegexSalt = /^\/salt/;
       botRegexRules = /^\/rules/;
-      botDuck = /^\/duck/;
+      botBeer = /^\/beer/;
       botRegexSh = /^\/shrug/; 
       botRegexSCC = /^\/setclashcaller/;
       botRegexGCC = /^\/getclashcaller/;
@@ -33,10 +33,10 @@ function respond() {
     postMessage("¯\\_(ツ)_/¯");
     this.res.end();
   } 
-  else if(request.text && botDuck.test(request.text)) {
+  else if(request.text && botBeer.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://media3.giphy.com/media/YCseTHF2I6CCA/giphy.gif");
-    var Omega = '\u1F600';
+    var Omega = '\uD83CDF7A';
     postMessage(Omega);
     this.res.end();
   }
